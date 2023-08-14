@@ -1,0 +1,48 @@
+[
+	{
+		"title": "papa",
+		"description": "verdura",
+		"price": 23,
+		"thumbnail": "Sin imagen",
+		"code": "ABC123",
+		"stock": 93,
+		"id": 1
+	},
+	{
+		"title": "choclo",
+		"description": "verdura",
+		"price": 45,
+		"thumbnail": "Sin imagen",
+		"code": "DEF456",
+		"stock": 33,
+		"id": 2
+	},
+	{
+		"title": "manzana",
+		"description": "fruta",
+		"price": 93,
+		"thumbnail": "Sin imagen",
+		"code": "GHI789",
+		"stock": 11,
+		"id": 3
+	},
+
+	{
+		"title": "pera",
+		"description": "verdura",
+		"price": 101,
+		"thumbnail": "Sin imagen",
+		"code": "JKL123",
+		"stock": 66,
+		"id": 4
+	},
+	{
+		"title": "zanahoria",
+		"description": "verdura",
+		"price": 83,
+		"thumbnail": "Sin imagen",
+		"code": "MNO456",
+		"stock": 92,
+		"id": 5
+	}
+]
