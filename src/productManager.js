@@ -1,9 +1,10 @@
 import fs from "fs"
+import __dirname from './utils.js';
 
 class ProductManager {
    #path
     constructor() {
-        this.#path = './files/products.json'
+        this.#path = (__dirname+'/files/products.json')
     }
     
     getProducts = async()=>{

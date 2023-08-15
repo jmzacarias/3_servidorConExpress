@@ -1,23 +1,23 @@
 import express from "express";
 import ProductManager from "./productManager.js";
 
-const app = express()
 
+const app = express();
+const productManager = new ProductManager();
 app.listen(8080, ()=> console.log('Server connected'))
-
-const productManager = new ProductManager()
 
 app.get('/products',async (req,res)=>{
     const data = await productManager.getProducts()
     const limit = req.query.limit
-    if(!limit) res.json({payload:data})
-    res.json({payload: data.slice(limit)})
+    if(!limit) return res.send({payload:data})
+    let limitedData = data.slice(0, limit)
+    return res.send({payload: limitedData})     
 })
 
 app.get('/products/:pid',async (req,res)=>{
-    const pid = parseInt(req.params.pid)
-    const data = await productManager.getProductById(req.params.pid)
-    res.json({payload:data})
+    let param = req.params.pid
+    if(isNaN(param)) return res.send({error: `"${param}" is not a number`})
+    const pid = parseInt(param)
+    const data = await productManager.getProductById(pid)
+    return res.send({payload:data})
 })
-
-productManager.addProduct({title: 'papa', description: 'verdura', price: 23, thumbnail: 'Sin imagen', code: 'ABC123', stock:93})
